@@ -1,0 +1,44 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+              Embedding Expression
+        </title>
+        <script src='https://unpkg.com/babel-standalone@6.26.0/babel.min.js'></script>
+        <script src="https://unpkg.com/react@16.0.0/umd/react.production.min.js"></script>
+        <script src="https://unpkg.com/react-dom@16.0.0/umd/react-dom.production.min.js"></script>
+        
+    </head>
+
+    <body>
+        <div id="root"></div>
+
+        <script type='text/babel'>
+       const rootHandle =  document.getElementById('root');
+
+        let str='WORLD';
+
+      function reverse(){
+           str = str.split('').reverse().join('');
+          render2Dom();
+      }
+
+
+      function render2Dom(){
+          const ele = (
+              <div>
+                <h2> {str}</h2>
+            <button onClick= {reverse}> reverse </button>
+            </div>
+          )
+          ReactDOM.render(ele,rootHandle);
+      }
+        
+      render2Dom();
+       
+    
+        </script>
+    </body>
+</html>
+
